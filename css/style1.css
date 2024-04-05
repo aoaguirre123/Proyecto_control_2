@@ -18,22 +18,38 @@
   margin-right: 20px;
 }
 
+.index_disponible {
+  color: green;
+  font-weight: bolder;
+}
+
+.index_precio{
+  color: blue;
+  font-weight: 500;
+}
+
+.index_subscrito {
+  color: red;
+  font-weight: 500;
+}
+
+.index_stock {
+  color: green;
+  font-weight: bold;
+}
+
 .fondo {
-  background-color: rgba(127, 255, 212, 0.287);
+  background-color: rgba(127, 157, 255, 0.207);
 }
 
-.margen-card{
-  margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.centrar-tarjetas {
+.align-center2 {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.centrar{
-  justify-content: space-between ;
+.footer {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  height: 100px; /* Altura del footer */
 }
