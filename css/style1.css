@@ -17,3 +17,23 @@
   margin-left: 20px;
   margin-right: 20px;
 }
+
+.fondo {
+  background-color: rgba(127, 255, 212, 0.287);
+}
+
+.margen-card{
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.centrar-tarjetas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centrar{
+  justify-content: space-between ;
+}
