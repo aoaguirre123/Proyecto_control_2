@@ -30,6 +30,7 @@
         </div>
         <form>
           <div class="row">
+
             <div class="col-lg-6 card-body caja">
               <!-- RUT -->
               <div class="form-group mt-1">
@@ -86,6 +87,22 @@
                 />
               </div>
 
+              <!-- ChkBox para subscripcion -->
+              <div class="form-check mt-3">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="subscribeCheckbox"
+                />
+                <label class="form-check-label" for="subscribeCheckbox">
+                  <span class="fw-light"
+                    >Deseo subscribirme con un aporte de $5.000 mensuales y
+                    obtener un 20% de descuento en mis compras</span
+                  >
+                </label>
+              </div>
+
               <!-- Contraseña -->
               <div class="form-group mt-3">
                 <label for="contraseña">Contraseña:</label>
@@ -110,17 +127,17 @@
             </div>
 
             <!-- Imagen del perfil -->
-            <div class="col-lg-6 p-5">
-              <!-- Imagen del perfil -->
+            <div class="col-lg-6 p-5 d-flex flex-column justify-content-center align-items-center">
               <img
-                src="img/GerenteG.jpg"
+                src="img/PerfilD.jpg"
                 class="img-thumbnail"
+                style="width: 400px; height: 400px; object-fit: cover;"
                 width="300px"
                 id="profile-image"
                 style="cursor: pointer"
                 onclick="document.getElementById('file-input').click();"
               />
-              <!-- Input de tipo 'file' oculto -->
+              <div class="align-center2 mt-2 fw-light">(Presione la imagen para cambiarla)</div>
               <input
                 type="file"
                 id="file-input"
