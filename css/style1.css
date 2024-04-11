@@ -104,3 +104,7 @@
 .quitar-linea {
   text-decoration: none;
 }
+
+.in-line{
+  display: inline-block;
+}
