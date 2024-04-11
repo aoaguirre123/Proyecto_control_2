@@ -69,6 +69,12 @@
   justify-content: center;
 }
 
+.container3 {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+}
+
 .caja {
   width: 500px;
   height: 100%;
@@ -89,10 +95,12 @@
   background-color: white;
 }
 
-
-
 .botones-totales {
   padding: 1rem;
   display: flex;
   justify-content: end;
+}
+
+.quitar-linea {
+  text-decoration: none;
 }
