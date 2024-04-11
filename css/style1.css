@@ -23,7 +23,7 @@
   font-weight: bolder;
 }
 
-.index_precio{
+.index_precio {
   color: blue;
   font-weight: 500;
 }
@@ -47,11 +47,16 @@
   justify-content: center;
 }
 
-.br2{
+.align-right2{
+  display: flex;
+  justify-content: right;
+}
+
+.br2 {
   line-height: 4;
 }
 
-.juegos{
+.juegos {
   display: flex;
   justify-content: center;
   padding-left: 1rem;
@@ -64,9 +69,30 @@
   justify-content: center;
 }
 
-
-
 .caja {
-  width: 500px; 
-  height: 100%; 
+  width: 500px;
+  height: 100%;
+}
+
+.product-box {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: rgb(255, 255, 255);
+}
+
+.precios-totales {
+  padding: 1rem;
+  border: 2px solid rgb(195, 195, 195);
+  display: flex;
+  justify-content: end;
+  background-color: white;
+}
+
+
+
+.botones-totales {
+  padding: 1rem;
+  display: flex;
+  justify-content: end;
 }
