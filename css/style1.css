@@ -108,3 +108,16 @@
 .in-line{
   display: inline-block;
 }
+
+footer {
+  margin-top: auto;
+  justify-content: end;
+  bottom: 0;
+  width: auto;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
