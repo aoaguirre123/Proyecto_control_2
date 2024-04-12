@@ -17,3 +17,17 @@
   margin-left: 20px;
   margin-right: 20px;
 }
+
+
+footer {
+  margin-top: auto;
+  justify-content: end;
+  bottom: 0;
+  width: auto;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
