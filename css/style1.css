@@ -1,23 +1,99 @@
-.margen-carrusel {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
-.margen-titulo {
-  margin-left: 50px;
-}
-
-.margen-footer {
-  margin: 10px;
-}
 
 .margen-footer2 {
   margin-left: 20px;
   margin-right: 20px;
 }
 
+.index_disponible {
+  color: green;
+  font-weight: bolder;
+}
+
+.index_precio {
+  color: blue;
+  font-weight: 500;
+}
+
+.index_subscrito {
+  color: red;
+  font-weight: 500;
+}
+
+.index_stock {
+  color: green;
+  font-weight: bold;
+}
+
+.fondo {
+  background-color: rgba(127, 157, 255, 0.207);
+}
+
+.align-center2 {
+  display: flex;
+  justify-content: center;
+}
+
+.align-right2{
+  display: flex;
+  justify-content: right;
+}
+
+.br2 {
+  line-height: 4;
+}
+
+.juegos {
+  display: flex;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.container2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container3 {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+}
+
+.caja {
+  width: 500px;
+  height: 100%;
+}
+
+.product-box {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: rgb(255, 255, 255);
+}
+
+.precios-totales {
+  padding: 1rem;
+  border: 2px solid rgb(195, 195, 195);
+  display: flex;
+  justify-content: end;
+  background-color: white;
+}
+
+.botones-totales {
+  padding: 1rem;
+  display: flex;
+  justify-content: end;
+}
+
+.quitar-linea {
+  text-decoration: none;
+}
+
+.in-line{
+  display: inline-block;
+}
 
 footer {
   margin-top: auto;
@@ -30,4 +106,3 @@ body{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}

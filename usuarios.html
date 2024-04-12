@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>playopolis.cl/mantenedor-usuarios</title>
+    <link rel="stylesheet" href="css/style1.css" />
+    <!-- Script Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- Script LOGOS Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/40f2d4fd97.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="fondo">
+    <!-- NavBar (Llamada desde script JS)-->
+    <div id="menu"></div>
+
+    <h2 class="m-4">Mantenedor de usuarios</h2>
+
+    <!-- Formulario registro -->
+    <div class="m-5">
+      <div class="container-fluid container card">
+        <form>
+          <div class="row">
+            <div class="col-lg-6 card-body caja">
+              <!-- ID -->
+              <div class="form-group mt-1">
+                <label for="rut">ID:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="id"
+                  placeholder="Ingrese ID"
+                  value="35"
+                />
+              </div>
+
+              <!-- Tipo de usuario -->
+              <div class="form-group mt-2">
+                <div class="container3">
+                  <div class="form-group d-flex" >
+                    
+                    <label >Tipo de usuario:</label>
+                    <div style="margin-left: 30px;" class="d-flex">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="exampleRadios"
+                          id="exampleRadios1"
+                          value="option1"
+                        />
+                        <label class="form-check-label" for="exampleRadios1">
+                          Cliente
+                        </label>
+                      </div>
+                      <div class="form-check" style="margin-left: 10px;">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="exampleRadios"
+                          id="exampleRadios2"
+                          value="option2"
+                          checked
+                        />
+                        <label class="form-check-label" for="exampleRadios2">
+                          Administrador
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- RUT -->
+              <div class="form-group mt-1">
+                <label for="rut">RUT:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="rut"
+                  placeholder="Ingrese su RUT"
+                  value="12.345.678-K"
+                />
+              </div>
+
+              <!-- Nombres -->
+              <div class="form-group mt-2">
+                <label for="nombres">Nombres:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombres"
+                  placeholder="Ingrese sus nombres"
+                  value="Ana"
+                />
+              </div>
+
+              <!-- Apellidos -->
+              <div class="form-group mt-2">
+                <label for="apellidos">Apellidos:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="apellidos"
+                  placeholder="Ingrese sus apellidos"
+                  value="Torres"
+                />
+              </div>
+
+              <!-- Correo -->
+              <div class="form-group mt-2">
+                <label for="correo">Correo electrónico:</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="correo"
+                  placeholder="Ingrese su correo electrónico"
+                  value="atorres@duocuc.cl"
+                />
+              </div>
+
+              <!-- Direccion -->
+              <div class="form-group mt-2">
+                <label for="direccion">Dirección:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="direccion"
+                  placeholder="Ingrese su dirección"
+                  value="San Juan Bautista 423, Santiago Centro, Region metropolitana"
+                />
+              </div>
+
+              <!-- ChkBox para subscripcion -->
+              <div class="form-check mt-3">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="subscribeCheckbox"
+                  checked
+                />
+                <label class="form-check-label" for="subscribeCheckbox">
+                  <span class="fw-light"
+                    >Deseo subscribirme con un aporte de $3.000 mensuales y
+                    obtener un 10% de descuento en mis compras</span
+                  >
+                </label>
+              </div>
+
+              <!-- Contraseña -->
+              <div>
+                <div class="form-group mt-3">
+                  <div class="w-100">
+                    <div>
+                      <label for="contraseña">Contraseña:</label>
+                    </div>
+                    <div class="d-flex">
+                      <!-- campo contraseña -->
+                      <div style="width: 72%">
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="contraseña"
+                          placeholder="Ingrese su contraseña"
+                          value="*************"
+                        />
+                      </div>
+                      <!-- boton generar contraseña -->
+                      <div class="flex-shrink-1">
+                        <button
+                          type="submit"
+                          class="btn btn-primary btn-block"
+                          style="margin-left: 10px"
+                        >
+                          Generar contraseña
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Imagen del perfil -->
+            <div
+              class="col-lg-6 p-5 d-flex flex-column justify-content-center align-items-center"
+            >
+              <img
+                src="img/EncargadaM.jpg"
+                class="img-thumbnail"
+                style="width: 400px; height: 400px; object-fit: cover"
+                width="300px"
+                id="profile-image"
+                style="cursor: pointer"
+                onclick="document.getElementById('file-input').click();"
+              />
+              <div class="align-center2 mt-2 fw-light">
+                (Presione la imagen para cambiarla)
+              </div>
+              <input
+                type="file"
+                id="file-input"
+                style="display: none"
+                onchange="changeProfileImage(event)"
+                accept="image/*"
+              />
+            </div>
+          </div>
+
+          <!-- Botones Continuar y Limpiar -->
+          <div class="m-2 align-center2">
+            <button type="submit" class="btn btn-primary btn-block m-1">
+              Guardar
+            </button>
+            <button type="reset" class="btn btn-primary btn-block m-1">
+              Nuevo
+            </button>
+            <button type="reset" class="btn btn-secondary btn-block m-1">
+              Limpiar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Tabla de Usuarios -->
+    <div class="px-5 mb-5">
+      <div class="table-responsive">
+        <table class="table table-light table-striped table-bordered" style="max-width: 100%;">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">ID</th>
+              <th scope="col">Tipo de usuario</th>
+              <th scope="col">RUT</th>
+              <th scope="col">Nomrbres</th>
+              <th scope="col">Apellidos</th>
+              <th scope="col">Correo</th>
+              <th scope="col">Direccion</th>
+              <th scope="col">Con subscripcion</th>
+              <th scope="col">Imagen</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"></th>
+              <td>34</td>
+              <td>Cliente</td>
+              <td>9.455.847-K</td>
+              <td>Juan</td>
+              <td>Perez</td>
+              <td>jperez@duocuc.cl</td>
+              <td>San Juan Bautista 423</td>
+              <td>Si</td>
+              <td><img src="img/GerenteG.jpg" alt="" width="70px"></td>
+            </tr>
+            <tr>
+              <th scope="col">></th>
+              <td>35</td>
+              <td>Administrador</td>
+              <td>12.345.678-K</td>
+              <td>Ana</td>
+              <td>Torres</td>
+              <td>atorres@duocuc.cl</td>
+              <td>San Juan Bautista 423</td>
+              <td>Si</td>            
+              <td><img src="img/EncargadaM.jpg" alt="" width="70px"></td>
+            </tr>
+            <tr>
+              <th scope="col"></th>
+              <td>36</td>
+              <td>Cliente</td>
+              <td>26.846.927-K</td>
+              <td>Pedro</td>
+              <td>Gonzalez</td>
+              <td>pgonzales@duocuc.cl</td>
+              <td>San Juan Bautista 423</td>
+              <td>No</td>            
+              <td><img src="img/PerfilD.jpg" alt="" width="70px"></td>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer bg-dark text-light">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <h5 class="margen-footer">Síguenos en redes sociales:</h5>
+              <div class="">
+                <p class="margen-footer">
+                  <a href="https://wa.me/+56912345678"
+                    ><i
+                      class="fa-brands fa-square-whatsapp fa-2xl"
+                      style="color: #63e6be"
+                    ></i
+                  ></a>
+                  <a href="https://www.facebook.com/PlayopolisStore"
+                    ><i
+                      class="fa-brands fa-square-facebook fa-2xl"
+                      style="color: #74c0fc"
+                    ></i
+                  ></a>
+                  <a href="https://www.instagram.com/PlayopolisStore"
+                    ><i
+                      class="fa-brands fa-square-instagram fa-2xl"
+                      style="color: #fd0269"
+                    ></i
+                  ></a>
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h5 class="margen-footer">Dirección:</h5>
+              <p class="margen-footer">Moneda 627, Santiago.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Script carpeta JS -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
