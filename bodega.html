@@ -19,11 +19,13 @@
     ></script>
   </head>
   <body class="fondo">
-    <!-- NavBar (Llamada desde script JS)-->
-    <div id="menu"></div>
 
+    <!-- Navbar (Admin) -->
+    <div id="menu-adm"></div>
+
+    <!-- Formulario mantenedor de bodega -->
     <div class="m-5">
-      <div class="container-fluid container card">
+      <div class="container-fluid card col-lg-10">
         <div
           class="row card-header bg-primary text-white fw-semibold align-center"
         >
@@ -34,15 +36,35 @@
 
             <div class="col-lg-6 card-body caja">
 
+              <!-- Categoria producto -->
+              <div class="mb-3">
+                <label for="Categoria" class="form-label">Categoria:</label>
+                <select class="form-select" aria-label="Seleccionar categoría">
+                  <option selected>-- Seleccionar categoría --</option>
+                  <option value="1">VideoJuego</option>
+                  <option value="2">Consola</option>
+                  <option value="3">Accesorios</option>
+                </select>
+              </div>
 
+              <!-- Nombre producto -->
+              <div class="mb-3">
+                <label for="Nombre" class="form-label">Nombre:</label>
+                <select class="form-select" aria-label="Seleccionar Nombre">
+                  <option selected>-- Seleccionar producto --</option>
+                  <option value="1">Diablo IV</option>
+                  <option value="2">Valkyrie</option>
+                  <option value="3">GTA 5</option>
+                </select>
+              </div>
 
               <!-- Cantidad -->
-              <div class="form-group mt-2 in-line">
+              <div class="form-group mt-2 " style="max-width: 15rem;">
                 <label for="cantidad">Cantidad:</label>
                 <div>
-                  <input
-                    type="text"
-                    class=" in-line"
+                  <input 
+                    type="number"
+                    class="form-control mt-1"
                     id="cantidad"
                     placeholder="Ingrese cantidad"
                   />
@@ -52,11 +74,11 @@
             </div>
 
             <!-- Imagen del perfil -->
-            <div class="col-lg-6 p-5 d-flex flex-column justify-content-center align-items-center">
+            <div class="col-lg-6 mt-3 d-flex flex-column justify-content-center align-items-center">
               <img
-                src="img/PerfilD.jpg"
+                src="img/Producto-sin-imagen.png"
                 class="img-thumbnail"
-                style="width: 150px; height: 150px; object-fit: cover;"
+                style="width: 200px; height: 200px; object-fit: cover;"
                 width="300px"
                 id="profile-image"
                 style="cursor: pointer"
@@ -75,11 +97,11 @@
 
           <!-- Botones Continuar y Limpiar -->
           <div class="m-2 align-center2">
-            <button type="submit" class="btn btn-primary btn-block m-1">
-              Continuar
+            <button type="reset" class="btn btn-secondary btn-block m-1" style="width:6rem;">
+              Nuevo
             </button>
-            <button type="reset" class="btn btn-secondary btn-block m-1">
-              Limpiar
+            <button type="submit" class="btn btn-primary btn-block m-1" style="width:6rem;">
+              Agregar
             </button>
           </div>
         </form>

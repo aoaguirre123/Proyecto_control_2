@@ -9,7 +9,7 @@ if (document.getElementById('mini_producto')) {
 }
 
 
-// Script para copiar NavBar en cada pagina
+// Script para copiar NavBar (usuario sin registrar) en cada pagina
 if (document.getElementById('menu')) {
   fetch('menu_superior.html').then(response => {
       return response.text();
@@ -19,6 +19,25 @@ if (document.getElementById('menu')) {
   });
 };
 
+// Script para copiar NavBar (Admin) en cada pagina
+if (document.getElementById('menu-adm')) {
+  fetch('menu_sup_admin.html').then(response => {
+      return response.text();
+  }).then(htmlContent => {
+  document.getElementById('menu-adm').innerHTML = htmlContent;
+  window.scrollTo(0, 0);
+  });
+};
+
+// Script para copiar NavBar (Cliente) en cada pagina
+if (document.getElementById('menu-cli')) {
+  fetch('menu_sup_user.html').then(response => {
+      return response.text();
+  }).then(htmlContent => {
+  document.getElementById('menu-cli').innerHTML = htmlContent;
+  window.scrollTo(0, 0);
+  });
+};
 
 // Función para cambiar la imagen de perfil
 function changeProfileImage(event) {
