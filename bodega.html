@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -40,8 +40,8 @@
               <div class="mb-3">
                 <label for="Categoria" class="form-label">Categoria:</label>
                 <select class="form-select" aria-label="Seleccionar categoría">
-                  <option selected>-- Seleccionar categoría --</option>
-                  <option value="1">VideoJuego</option>
+                  <option value="1">-- Seleccionar categoría --</option>
+                  <option selected>VideoJuego</option>
                   <option value="2">Consola</option>
                   <option value="3">Accesorios</option>
                 </select>
@@ -51,8 +51,8 @@
               <div class="mb-3">
                 <label for="Nombre" class="form-label">Nombre:</label>
                 <select class="form-select" aria-label="Seleccionar Nombre">
-                  <option selected>-- Seleccionar producto --</option>
-                  <option value="1">Diablo IV</option>
+                  <option value="1">-- Seleccionar producto --</option>
+                  <option selected>Diablo IV</option>
                   <option value="2">Valkyrie</option>
                   <option value="3">GTA 5</option>
                 </select>
@@ -73,24 +73,15 @@
 
             </div>
 
-            <!-- Imagen del perfil -->
+            <!-- Imagen del producto -->
             <div class="col-lg-6 mt-3 d-flex flex-column justify-content-center align-items-center">
               <img
-                src="img/Producto-sin-imagen.png"
+                src="img/juego1.png"
                 class="img-thumbnail"
                 style="width: 200px; height: 200px; object-fit: cover;"
                 width="300px"
                 id="profile-image"
                 style="cursor: pointer"
-                onclick="document.getElementById('file-input').click();"
-              />
-              <div class="align-center2 mt-2 fw-light">(Presione la imagen para cambiarla)</div>
-              <input
-                type="file"
-                id="file-input"
-                style="display: none"
-                onchange="changeProfileImage(event)"
-                accept="image/*"
               />
             </div>
           </div>

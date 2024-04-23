@@ -125,3 +125,23 @@ body{
 .link-negro{
   color: black;
 }
+
+.promocion {
+  background-color: #fc9aa2; 
+  color: #891420; 
+  padding: 10px; 
+  border: 1px solid #f5c6cb; 
+  border-radius: .25rem; 
+  width: 60rem;
+}
+
+.centrar-promo {
+  display: flex;
+  justify-content: center;
+}
+
+#boleta_tabla_estados td {
+  text-align: center;
+  font-weight: bold;
+  padding-right: 20px;
+}

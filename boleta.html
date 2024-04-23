@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -116,27 +116,66 @@
       </div>
     </div>
 
-    <!-- Seccion Valores Totales -->
-    <div>
-      <div class="d-flex justify-content-end" >
-        <div class="precios-totales rounded d-flex flex-column mx-5">
-          <div class="d-flex  ">
-            <div class="p-2" style="flex: 1;">Precio sin IVA</div>
-            <div class="p-2 border border-secondary-subtle border-2 rounded">$17.647</div>
-          </div>
-          <div class="d-flex mt-1">
-            <div class="p-2" style="flex: 1;">Valor del IVA (19%)</div>
-            <div class="p-2 border border-secondary-subtle border-2 rounded">$3.353</div>
-          </div>
-          <div class="d-flex mt-1">
-            <div class="p-2" style="flex: 1;">Total a pagar</div>
-            <div class="p-2 border border-secondary-subtle border-2 rounded">$21.000</div>
+    <!-- Estado y valores -->
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Iconos de los estado de la boleta -->
+        <div class="col m-5">
+            <table id="boleta_tabla_estados">
+                <tr>
+                    <td>
+                        <img src="img/vendido.png" alt="">
+                    </td>
+                    <td>
+                        <img src="img/despachado.png" alt="">
+                    </td>
+                    <td>
+                        <img src="img/entregado.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Vendido <br>
+                        10/04/2024 <br>
+                        11:00
+                    </td>
+                    <td>
+                        Despachado <br>
+                        11/04/2024 <br>
+                        12:00
+                    </td>
+                    <td>
+                        Entregado <br>
+                        11/04/2024 <br>
+                        18:00
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- Seccion Valores Totales -->
+        <div class="col">
+          <div class="d-flex justify-content-end" >
+            <div class="precios-totales rounded d-flex flex-column mx-5">
+              <div class="d-flex  ">
+                <div class="p-2" style="flex: 1;">Precio sin IVA</div>
+                <div class="p-2 border border-secondary-subtle border-2 rounded">$17.647</div>
+              </div>
+              <div class="d-flex mt-1">
+                <div class="p-2" style="flex: 1;">Valor del IVA (19%)</div>
+                <div class="p-2 border border-secondary-subtle border-2 rounded">$3.353</div>
+              </div>
+              <div class="d-flex mt-1">
+                <div class="p-2" style="flex: 1;">Total a pagar</div>
+                <div class="p-2 border border-secondary-subtle border-2 rounded">$21.000</div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+    </div>
     
       <br><br><br><br><br>
     </div>
+
     <!-- Footer -->
     <footer>
       <div class="footer bg-dark text-light">
