@@ -187,6 +187,7 @@ $(document).ready(function() {
       },
     },
   });
+  
   $("#formulario_registro").validate({
     rules: {
       rut_registro: {
@@ -244,6 +245,68 @@ $(document).ready(function() {
       confirmar_contraseña_registro: {
         required: "Debes ingresar una contraseña",
         equalTo: "Las contraseñas no coinciden",
+      },
+    },
+  });
+
+  $("#formulario_usuarios").validate({
+    rules: {
+      cod_usuarios: {
+        required: true,
+      },
+      rut_usuarios: {
+        required: true,
+        rutChileno: true,
+      },
+      nombre_usuarios: {
+        required: true,
+        minlength: 3,
+      },
+      apellido_usuarios: {
+        required: true,
+        minlength: 3,
+      },
+      correo_usuarios: {
+        required: true,
+        correoCompleto: true,
+      },
+      direccion_usuarios: {
+        required: true,
+        minlength: 3,
+      },
+      contraseña_usuarios: {
+        required: true,
+        minlength: 4,
+      },
+
+    },
+    messages: {
+      cod_usuarios: {
+        required: "Debes ingresar un codigo de usuario",
+      },
+      rut_usuarios: {
+        required: "Debes ingresar un rut",
+        rutChileno: "Ingrese un rut válido",
+      },
+      nombre_usuarios: {
+        required: "Debes ingresar un nombre",
+        minlength: "Debe tener al menos 3 caracteres"
+      },
+      apellido_usuarios: {
+        required: "Debes ingresar un apellido",
+        minlength: "Debe tener al menos 3 caracteres"
+      },
+      correo_usuarios: {
+        required: "Debes ingresar un correo",
+        correoCompleto: "Ingrese un correo válido",
+      },
+      direccion_usuarios: {
+        required: "Debes ingresar una dirección",
+        minlength: "Debe tener al menos 3 caracteres"
+      },
+      contraseña_usuarios: {
+        required: "Debes ingresar una contraseña",
+        minlength: "Debe tener al menos 4 caracteres"
       },
     },
   });
