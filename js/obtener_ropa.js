@@ -1,7 +1,10 @@
 $(document).ready(function () { 
+  const loadingIndicator = document.getElementById('loading-indicator');
   fetch('https://fakestoreapi.com/products').then(res => res.json()).then(data => {
     const ropa = data;
     const htmlRopa = document.getElementById('card-ropa');
+
+    loadingIndicator.parentNode.removeChild(loadingIndicator);
 
     ropa.forEach(function(ropas, index){
       const card = 
@@ -9,9 +12,9 @@ $(document).ready(function () {
         <img src="${ropas.image}" class="card-img-top" alt="${ropas.title}">
         <div class="card-body">
           <h5 class="card-title">${ropas.title}</h5>
-          <span class="text-success">Precio: $${ropas.price}</span><br/>
-          <p>Categoria: ${ropas.category}</p>
-          <p class="card-text ">${ropas.description}</p>
+          <span class="text-success fw-bold">Precio: $${ropas.price}</span><br/>
+          <p class="">Categoria: ${ropas.category}</p>
+          <p class="card-text fw-light text-secondary">${ropas.description}</p>
         </div>
       </div>`;
 
