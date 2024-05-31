@@ -15,6 +15,8 @@ $(document).ready(function () {
           <span class="text-success fw-bold">Precio: $${ropas.price}</span><br/>
           <p class="">Categoria: ${ropas.category}</p>
           <p class="card-text fw-light text-secondary">${ropas.description}</p>
+          <br>
+            <div class="align-center2"><a class="btn btn-primary">Buscar producto</a></div>
         </div>
       </div>`;
 

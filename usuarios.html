@@ -39,7 +39,6 @@
                   id="cod_usuarios"
                   name="cod_usuarios"
                   placeholder="Ingrese ID"
-                  value="35"
                 />
               </div>
 
@@ -47,34 +46,23 @@
               <div class="form-group mt-2">
                 <div class="container3">
                   <div class="form-group d-flex" >
-                    
                     <label >Tipo de usuario:</label>
                     <div style="margin-left: 30px;" class="d-flex">
+
                       <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="exampleRadios"
-                          id="exampleRadios1"
-                          value="option1"
-                        />
-                        <label class="form-check-label" for="exampleRadios1">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                        <label class="form-check-label" for="flexRadioDefault1">
                           Cliente
                         </label>
                       </div>
+                      
                       <div class="form-check" style="margin-left: 10px;">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="exampleRadios"
-                          id="exampleRadios2"
-                          value="option2"
-                          checked
-                        />
-                        <label class="form-check-label" for="exampleRadios2">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <label class="form-check-label" for="flexRadioDefault2">
                           Administrador
                         </label>
                       </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -89,7 +77,6 @@
                   id="rut_usuarios"
                   name="rut_usuarios"
                   placeholder="Ingrese su RUT"
-                  value="12.345.678-K"
                 />
               </div>
 
@@ -102,7 +89,6 @@
                   id="nombre_usuarios"
                   name="nombre_usuarios"
                   placeholder="Ingrese sus nombres"
-                  value="Ana"
                 />
               </div>
 
@@ -115,7 +101,6 @@
                   id="apellido_usuarios"
                   name="apellido_usuarios"
                   placeholder="Ingrese sus apellidos"
-                  value="Torres"
                 />
               </div>
 
@@ -128,21 +113,19 @@
                   id="correo_usuarios"
                   name="correo_usuarios"
                   placeholder="Ingrese su correo electrónico"
-                  value="atorres@duocuc.cl"
                 />
               </div>
 
               <!-- Direccion -->
               <div class="form-group mt-2">
                 <label for="direccion">Dirección:</label>
-                <input
-                  type="text"
+                <textarea
+                  rows="3"
                   class="form-control"
                   id="direccion_usuarios"
                   name="direccion_usuarios"
                   placeholder="Ingrese su dirección"
-                  value="San Juan Bautista 423, Santiago Centro, Region metropolitana"
-                />
+                ></textarea>
               </div>
 
               <!-- ChkBox para subscripcion -->
@@ -152,7 +135,6 @@
                   type="checkbox"
                   value=""
                   id="subscribeCheckbox"
-                  checked
                 />
                 <label class="form-check-label" for="subscribeCheckbox">
                   <span class="fw-light"
@@ -162,39 +144,6 @@
                 </label>
               </div>
 
-              <!-- Contraseña -->
-              <div>
-                <div class="form-group mt-3">
-                  <div class="w-100">
-                    <div>
-                      <label for="contraseña">Contraseña:</label>
-                    </div>
-                    <div class="d-flex">
-                      <!-- campo contraseña -->
-                      <div style="width: 72%">
-                        <input
-                          type="password"
-                          class="form-control"
-                          id="contraseña_usuarios"
-                          name="contraseña_usuarios"
-                          placeholder="Ingrese su contraseña"
-                          value="*************"
-                        />
-                      </div>
-                      <!-- boton generar contraseña -->
-                      <div class="flex-shrink-1">
-                        <button
-                          type="submit"
-                          class="btn btn-primary btn-block"
-                          style="margin-left: 10px"
-                        >
-                          Generar contraseña
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
 
             <!-- Imagen del perfil -->
@@ -202,7 +151,7 @@
               class="col-lg-6 p-5 d-flex flex-column justify-content-center align-items-center"
             >
               <img
-                src="img/EncargadaM.jpg"
+                src="img/PerfilD.jpg"
                 class="img-thumbnail"
                 style="width: 400px; height: 400px; object-fit: cover"
                 width="300px"
@@ -221,7 +170,7 @@
             </div>
           </div>
 
-          <!-- Botones Continuar y Limpiar -->
+          <!-- Botones Continuar, Limpiar y generar contraseña -->
           <div class="m-2 align-center2">
             <button type="submit" class="btn btn-primary btn-block m-1">
               Guardar
@@ -231,6 +180,10 @@
             </button>
             <button type="reset" class="btn btn-secondary btn-block m-1">
               Limpiar
+            </button>
+            <!-- boton generar contraseña -->
+            <button type="button" class="btn btn-primary btn-block m-1" onclick="alert('Se ha enviado un email al usuario')">
+              Generar contraseña
             </button>
           </div>
         </form>

@@ -1,39 +1,30 @@
 $(document).ready(function() {
   // Agregar método de validación para RUT chileno
   $.validator.addMethod("rutChileno", function(value, element) {
-    // Eliminar puntos y guión del RUT
-    value = value.replace(/[.-]/g, "");
 
-    // Validar que el RUT tenga 8 o 9 dígitos
-    if (value.length < 8 || value.length > 9) {
-      return false;
+    // Validar que el RUT tenga el formato correcto (8 o 9 dígitos + guión + dígito verificador)
+    var rutPattern = /^\d{7,8}-[\dK]$/;
+    if (!rutPattern.test(value)) {
+        return false;
     }
 
-    // Validar que el último dígito sea un número o una 'K'
-    var validChars = "0123456789K";
-    var lastChar = value.charAt(value.length - 1).toUpperCase();
-    if (validChars.indexOf(lastChar) == -1) {
-      return false;
-    }
-
-    // Calcular el dígito verificador
-    var rut = parseInt(value.slice(0, -1), 10);
+    // Validar el dígito verificador
+    var rutSinGuion = value.replace("-", "");
+    var rut = rutSinGuion.slice(0, -1);
+    var dv = rutSinGuion.slice(-1);
     var factor = 2;
     var sum = 0;
-    var digit;
-    while (rut > 0) {
-      digit = rut % 10;
-      sum += digit * factor;
-      rut = Math.floor(rut / 10);
-      factor = factor === 7 ? 2 : factor + 1;
+    for (var i = rut.length - 1; i >= 0; i--) {
+        sum += parseInt(rut.charAt(i)) * factor;
+        factor = factor === 7 ? 2 : factor + 1;
     }
-    var dv = 11 - (sum % 11);
-    dv = dv === 11 ? "0" : dv === 10 ? "K" : dv.toString();
+    var dvCalculado = 11 - (sum % 11);
+    dvCalculado = dvCalculado === 11 ? "0" : dvCalculado === 10 ? "K" : dvCalculado.toString();
 
-    // Validar que el dígito verificador sea correcto
-    return dv === lastChar;
-  }, "Por favor ingrese un RUT válido."); 
+    return dv === dvCalculado;
+  }, "El RUT no es válido (escriba sin puntos y con guión)");
 
+  // Agregar método de validación para correo
   $.validator.addMethod("correoCompleto", function(value, element) {
 
     // Expresión regular para validar correo electrónico
@@ -42,16 +33,54 @@ $(document).ready(function() {
     // Validar correo electrónico con la expresión regular
     return regex.test(value);
 
-  }, 'Ingrese un correo válido');
+  }, 'El formato del correo no es válido');
+  
+  // Agregar método de validación para que un campo sólo acepte 
+  // letras y espacios en blanco, pero no números ni símbolos,
+  // ideal para campos como nombres y apellidos
+  $.validator.addMethod("soloLetras", function(value, element) {
+
+    return this.optional(element) || /^[a-zA-Z\s]*$/.test(value);
+
+  }, "Sólo se permiten letras y espacios en blanco.");
+
+  // El siguiente Javascript obliga a que la caja de texto del rut, siempre escriba la letra "K" en mayúscula
+  if (document.getElementById('rut_registro')){
+    document.getElementById('rut_registro').addEventListener('keyup', function(e) {
+      e.target.value = e.target.value.toUpperCase();
+    });
+  }
+  if (document.getElementById('rut_misdatos')){
+    document.getElementById('rut_misdatos').addEventListener('keyup', function(e) {
+      e.target.value = e.target.value.toUpperCase();
+    });
+  }
+  if (document.getElementById('rut_usuarios')){
+    document.getElementById('rut_usuarios').addEventListener('keyup', function(e) {
+      e.target.value = e.target.value.toUpperCase();
+    });
+  }
 
   $("#formulario_bodega").validate({
     rules: {
+      categoria_bodega: {
+        required: true,
+      },
+      nombre_bodega: {
+        required: true,
+      },
       cantidad_bodega: {
         required: true,
         min: 0,
       },
     },
     messages: {
+      categoria_bodega: {
+        required: "Debes seleccionar una categoría",
+      },
+      nombre_bodega: {
+        required: "Debes seleccionar un nombre",
+      },
       cantidad_bodega: {
         required: "Debes ingresar una cantidad",
         min: "La cantidad debe ser mayor a 0",
@@ -63,6 +92,7 @@ $(document).ready(function() {
     rules: {
       correo_iniciar: {
         required: true,
+        email: true,
         correoCompleto: true,
       },
       contraseña_iniciar: {
@@ -72,6 +102,7 @@ $(document).ready(function() {
     messages: {
       correo_iniciar: {
         required: "Debes ingresar un correo",
+        email: "Ingrese un correo electrónico válido",
         correoCompleto: "Ingrese un correo válido",
       },
       contraseña_iniciar: {
@@ -88,14 +119,17 @@ $(document).ready(function() {
       },
       nombre_misdatos: {
         required: true,
+        soloLetras: true,
         minlength: 3,
       },
       apellido_misdatos: {
         required: true,
+        soloLetras: true,
         minlength: 3,
       },
       correo_misdatos: {
         required: true,
+        email: true,
         correoCompleto: true,
       },
       direccion_misdatos: {
@@ -104,9 +138,13 @@ $(document).ready(function() {
       },
       contraseña_misdatos: {
         required: true,
+        minlength: 5,
+        maxlength: 15,
       },
       confirmar_contraseña_misdatos: {
         required: true,
+        minlength: 5,
+        maxlength: 15,
         equalTo: "#contraseña_misdatos",
       },
     },
@@ -117,14 +155,17 @@ $(document).ready(function() {
       },
       nombre_misdatos: {
         required: "Debes ingresar un nombre",
+        soloLetras: "El nombre sólo puede contener letras y espacios en blanco",
         minlength: "Debe tener al menos 3 caracteres"
       },
       apellido_misdatos: {
         required: "Debes ingresar un apellido",
+        soloLetras: "El apellido sólo puede contener letras y espacios en blanco",
         minlength: "Debe tener al menos 3 caracteres"
       },
       correo_misdatos: {
         required: "Debes ingresar un correo",
+        email: "Ingrese un correo electrónico válido",
         correoCompleto: "Ingrese un correo válido",
       },
       direccion_misdatos: {
@@ -133,9 +174,13 @@ $(document).ready(function() {
       },
       contraseña_misdatos: {
         required: "Debes ingresar una contraseña",
+        minlength: "La contraseña debe tener un mínimo de 5 caracteres",
+        maxlength: "La contraseña debe tener un máximo de 15 caracteres",
       },
       confirmar_contraseña_misdatos: {
         required: "Debes ingresar una contraseña",
+        minlength: "La contraseña debe tener un mínimo de 5 caracteres",
+        maxlength: "La contraseña debe tener un máximo de 15 caracteres",
         equalTo: "Las contraseñas no coinciden",
       },
     },
@@ -147,6 +192,9 @@ $(document).ready(function() {
         required: true,
         minlength: 3,
       },
+      categoria: {
+        required: true,
+      },
       nombre_productos: {
         required: true,
         minlength: 3,
@@ -156,18 +204,29 @@ $(document).ready(function() {
       },
       precio_productos: {
         required: true,
+        number: true,
+        min: 0,
       },
       dscto_sub_productos: {
         required: true,
+        number: true,
+        min: 0,
+        max: 100,
       },
       dscto_oferta_productos: {
         required: true,
+        number: true,
+        min: 0,
+        max: 100,
       },
     },
     messages: {
       cod_productos: {
         required:"Debes ingresar un codigo de producto",
         minlength: "Debe tener al menos 2 caracteres",
+      },
+      categoria: {
+        required: "Debe seleccionar una categoría",
       },
       nombre_productos: {
         required: "Debes ingresar un nombre de producto",
@@ -178,12 +237,21 @@ $(document).ready(function() {
       },
       precio_productos: {
         required: "Debes ingresar un precio",
+        number: "El campo debe ser un número",
+        min: "El precio debe ser mayor o igual que 0",
       },
       dscto_sub_productos: {
         required: "Debes ingresar un descuento, si no tiene, ingresa 0",
+        number: "El campo debe ser un número",
+        min: "El descuento debe ser mayor o igual que 0",
+        max: "El descuento debe ser menor o igual que 100",
+
       },
       dscto_oferta_productos: {
         required: "Debes ingresar un descuento, si no tiene, ingresa 0",
+        number: "El campo debe ser un número",
+        min: "El descuento debe ser mayor o igual que 0",
+        max: "El descuento debe ser menor o igual que 100",
       },
     },
   });
@@ -196,14 +264,17 @@ $(document).ready(function() {
       },
       nombre_registro: {
         required: true,
+        soloLetras: true,
         minlength: 3,
       },
       apellido_registro: {
         required: true,
+        soloLetras: true,
         minlength: 3,
       },
       correo_registro: {
         required: true,
+        email: true,
         correoCompleto: true,
       },
       direccion_registro: {
@@ -211,10 +282,14 @@ $(document).ready(function() {
         minlength: 3,
       },
       contraseña_registro: {
+        minlength: 5,
+        maxlength: 15,
         required: true,
       },
       confirmar_contraseña_registro: {
         required: true,
+        minlength: 5,
+        maxlength: 15,
         equalTo: "#contraseña_registro",
       },
     },
@@ -225,14 +300,17 @@ $(document).ready(function() {
       },
       nombre_registro: {
         required: "Debes ingresar un nombre",
+        soloLetras: "El nombre sólo puede contener letras y espacios en blanco",
         minlength: "Debe tener al menos 3 caracteres"
       },
       apellido_registro: {
         required: "Debes ingresar un apellido",
+        soloLetras: "El apellido sólo puede contener letras y espacios en blanco",
         minlength: "Debe tener al menos 3 caracteres"
       },
       correo_registro: {
         required: "Debes ingresar un correo",
+        email: "ingrese un correo válido",
         correoCompleto: "Ingrese un correo válido",
       },
       direccion_registro: {
@@ -241,9 +319,13 @@ $(document).ready(function() {
       },
       contraseña_registro: {
         required: "Debes ingresar una contraseña",
+        minlength: "La contraseña debe tener un mínimo de 5 caracteres",
+        maxlength: "La contraseña debe tener un máximo de 15 caracteres",
       },
       confirmar_contraseña_registro: {
         required: "Debes ingresar una contraseña",
+        minlength: "La contraseña debe tener un mínimo de 5 caracteres",
+        maxlength: "La contraseña debe tener un máximo de 15 caracteres",
         equalTo: "Las contraseñas no coinciden",
       },
     },
@@ -260,10 +342,12 @@ $(document).ready(function() {
       },
       nombre_usuarios: {
         required: true,
+        soloLetras: true,
         minlength: 3,
       },
       apellido_usuarios: {
         required: true,
+        soloLetras: true,
         minlength: 3,
       },
       correo_usuarios: {
@@ -276,6 +360,8 @@ $(document).ready(function() {
       },
       contraseña_usuarios: {
         required: true,
+        minlength: 5,
+        maxlength: 15,
         minlength: 4,
       },
 
@@ -290,10 +376,12 @@ $(document).ready(function() {
       },
       nombre_usuarios: {
         required: "Debes ingresar un nombre",
+        soloLetras: "El nombre sólo puede contener letras y espacios en blanco",
         minlength: "Debe tener al menos 3 caracteres"
       },
       apellido_usuarios: {
         required: "Debes ingresar un apellido",
+        soloLetras: "El apellido sólo puede contener letras y espacios en blanco",
         minlength: "Debe tener al menos 3 caracteres"
       },
       correo_usuarios: {
@@ -306,6 +394,8 @@ $(document).ready(function() {
       },
       contraseña_usuarios: {
         required: "Debes ingresar una contraseña",
+        minlength: "La contraseña debe tener un mínimo de 5 caracteres",
+        maxlength: "La contraseña debe tener un máximo de 15 caracteres",
         minlength: "Debe tener al menos 4 caracteres"
       },
     },

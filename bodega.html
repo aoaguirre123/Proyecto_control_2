@@ -39,10 +39,10 @@
 
               <!-- Categoria producto -->
               <div class="mb-3">
-                <label for="Categoria" class="form-label" id="categoria_bodega" name="categoria_bodega">Categoria:</label>
-                <select class="form-select" aria-label="Seleccionar categoría">
-                  <option value="1">-- Seleccionar categoría --</option>
-                  <option selected>VideoJuego</option>
+                <label for="Categoria" class="form-label">Categoria:</label>
+                <select class="form-select" aria-label="Seleccionar categoría" id="categoria_bodega" name="categoria_bodega">
+                  <option selected value="">-- Seleccionar categoría --</option>
+                  <option value="1">VideoJuego</option>
                   <option value="2">Consola</option>
                   <option value="3">Accesorios</option>
                 </select>
@@ -50,10 +50,10 @@
 
               <!-- Nombre producto -->
               <div class="mb-3">
-                <label for="Nombre" class="form-label" id="nombre_bodega" name="nombre_bodega">Nombre:</label>
-                <select class="form-select" aria-label="Seleccionar Nombre">
-                  <option value="1">-- Seleccionar producto --</option>
-                  <option selected>Diablo IV</option>
+                <label for="Nombre" class="form-label">Nombre:</label>
+                <select class="form-select" aria-label="Seleccionar Nombre" id="nombre_bodega" name="nombre_bodega">
+                  <option selected value="">-- Seleccionar producto --</option>
+                  <option value="1">Diablo IV</option>
                   <option value="2">Valkyrie</option>
                   <option value="3">GTA 5</option>
                 </select>
@@ -123,24 +123,24 @@
               <td>27</td>
               <td>Consola</td>
               <td>Playstation 5</td>
-              <td>Vendido</td>
-              <td><a href="">Eliminar</a></td>
+              <td class="text-secondary fw-bolder">Vendido</td>
+              <td><span class="btn btn-danger btn-sm">Eliminar</span></td>
             </tr>
             <tr>
               <th scope="col">></th>
               <td>28</td>
               <td>Videojuego</td>
               <td>Diablo IV</td>
-              <td>Entregado</td>
-              <td><a href="">Eliminar</a></td>
+              <td class="text-success fw-bolder">Entregado</td>
+              <td><span class="btn btn-danger btn-sm">Eliminar</span></td>
             </tr>
             <tr>
               <th scope="col"></th>
               <td>29</td>
               <td>Consola</td>
               <td>Xbox series x</td>
-              <td>En bodega</td>
-              <td><a href="">Eliminar</a></td>
+              <td class="text-secondary fw-bolder">En bodega</td>
+              <td><span class="btn btn-danger btn-sm">Eliminar</span></td>
 
           </tbody>
         </table>

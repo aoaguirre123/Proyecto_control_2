@@ -78,9 +78,9 @@
                   </div>
                   <!-- Seleccionar categoría -->
                   <div class="mb-3">
-                    <label for="Categoria" class="form-label">Categoria:</label>
-                    <select class="form-select" aria-label="Seleccionar categoría">
-                      <option selected>Seleccionar categoría</option>
+                    <label for="categoria" class="form-label">Categoria:</label>
+                    <select class="form-select" aria-label="Seleccionar categoría" id="categoria" name="categoria">
+                      <option selected value="">Seleccionar categoría</option>
                       <option value="1">VideoJuego</option>
                       <option value="2">Consola</option>
                       <option value="3">Accesorios</option>
@@ -101,19 +101,19 @@
                   <!-- Precio -->
                   <div class="mb-3">
                     <label for="precio" class="form-label">Precio:</label>
-                    <input type="text" class="form-control" id="precio_productos" name="precio_productos" 
+                    <input type="number" class="form-control" id="precio_productos" name="precio_productos" 
                     placeholder="Ingrese precio de producto">
                   </div>
                   <!-- Descuento subscriptor -->
                   <div class="mb-3">
                     <label for="descuento subscriptor" class="form-label">Descuento subscriptor:</label>
-                    <input type="text" class="form-control" id="dscto_sub_productos" name="dscto_sub_productos" 
+                    <input type="number" class="form-control" id="dscto_sub_productos" name="dscto_sub_productos" 
                     placeholder="ingrese descuento de subscriptor">
                   </div>
                   <!-- Descuento por oferta -->
                   <div class="mb-3">
                     <label for="descuento por oferta" class="form-label">Descuento por oferta:</label>
-                    <input type="text" class="form-control" id="dscto_oferta_productos" name="dscto_oferta_productos" 
+                    <input type="number" class="form-control" id="dscto_oferta_productos" name="dscto_oferta_productos" 
                     placeholder="ingrese descuento por oferta">
                   </div>
                   <!-- Botones Guardar, Nuevo y Eliminar -->
