@@ -352,6 +352,7 @@ $(document).ready(function() {
       },
       correo_usuarios: {
         required: true,
+        email: true,
         correoCompleto: true,
       },
       direccion_usuarios: {
@@ -386,6 +387,7 @@ $(document).ready(function() {
       },
       correo_usuarios: {
         required: "Debes ingresar un correo",
+        email: "Ingrese un correo electrónico válido",
         correoCompleto: "Ingrese un correo válido",
       },
       direccion_usuarios: {
